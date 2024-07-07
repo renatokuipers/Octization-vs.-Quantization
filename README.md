@@ -192,25 +192,29 @@ Accuracy: 51.89%, Inference Time: 217.92s, Model Size: 282250
 
 Overall, the Octization method achieved substantially higher accuracy, showing an improvement of 18.57 percentage points. This is a very significant difference.
 
-**Inference Time:**
+#### Inference Time:
 Standard Quantization: 214.58s
 Octization: 217.92s
 
 The inference times are still very close, with Octization being slightly slower (by about 3.34 seconds over 20 epochs, or about 0.167 seconds per epoch).
 
-**Model Size:**
+#### Model Size:
 Both models still have the same size (282,250 parameters).
 
-**Analysis:**
-Learning Dynamics: The Octization method shows much better learning dynamics. Its loss decreases more rapidly and continues to decline steadily throughout all 20 epochs. In contrast, the standard quantization method's loss decreases more slowly and seems to be plateauing towards the end.
+#### Analysis:
+**Learning Dynamics:**
+The Octization method shows much better learning dynamics. Its loss decreases more rapidly and continues to decline steadily throughout all 20 epochs. In contrast, the standard quantization method's loss decreases more slowly and seems to be plateauing towards the end.
 
-Final Performance: The Octization method achieves a remarkably higher accuracy (51.89% vs 33.32%). This is a substantial improvement, especially considering that this is for the CIFAR-10 dataset, which is a challenging multi-class classification problem.
+**Final Performance:**
+The Octization method achieves a remarkably higher accuracy (51.89% vs 33.32%). This is a substantial improvement, especially considering that this is for the CIFAR-10 dataset, which is a challenging multi-class classification problem.
 
-Computational Efficiency: Despite the significantly better performance, the Octization method only incurs a minimal computational overhead (about 1.5% increase in inference time).
+**Computational Efficiency:**
+Despite the significantly better performance, the Octization method only incurs a minimal computational overhead (about 1.5% increase in inference time).
 
-Scalability: The performance gap between the two methods widened with more epochs (from about 11 percentage points at 5 epochs to 18.57 at 20 epochs), suggesting that the Octization method may have better scalability and could potentially achieve even higher performance with further training.
+**Scalability:**
+The performance gap between the two methods widened with more epochs (from about 11 percentage points at 5 epochs to 18.57 at 20 epochs), suggesting that the Octization method may have better scalability and could potentially achieve even higher performance with further training.
 
-**Conclusions:**
+#### Conclusions:
 Based on these extended results, the Octization method is clearly superior to the standard quantization method for the CIFAR-10 task:
 
 It achieves much higher accuracy (51.89% vs 33.32%), which is a very significant improvement for CIFAR-10.
@@ -218,10 +222,11 @@ It shows consistently better training dynamics, with lower loss values throughou
 The computational overhead remains minimal, even with extended training.
 The widening performance gap suggests that Octization might have a higher performance ceiling than standard quantization.
 
-The Octization method appears to be providing a more effective way of representing and processing information within the network. This could be due to:
- - Better preservation of important feature information during the quantization process.
- - More effective gradient flow during backpropagation, leading to better weight updates.
- - A quantization scheme that may be particularly well-suited to the types of features and patterns present in natural images.
+The Octization method appears to be providing a more effective way of representing and processing information within the network.
+This will be due to:
+ **- Better preservation of important feature information during the quantization process.**
+ **- More effective gradient flow during backpropagation, leading to better weight updates.**
+ **- A quantization scheme that may be particularly well-suited to the types of features and patterns present in natural images.**
 
 In conclusion, the Octization method demonstrates remarkably better performance than standard quantization in this extended experiment. It offers substantially improved accuracy with minimal computational overhead, and shows better learning dynamics and scalability.
 This is a very promising result as far as I can see, and it suggests that the Octization approach could be a significant contribution to the field of quantized neural networks.
@@ -230,6 +235,5 @@ This is a very promising result as far as I can see, and it suggests that the Oc
 
 - TensorFlow and PyTorch for providing the frameworks used in this project.
 
-```
 
-Feel free to clone the repository and run the provided scripts to further explore and analyze the quantization and octization methodologies.
+!! Feel free to clone the repository and run the provided scripts to further explore and analyze the quantization and octization methodologies. !!
